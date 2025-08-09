@@ -1,110 +1,114 @@
 # Pollinations.ai Prompt Enhancer
 
-A program with a secure and robust graphical user interface (GUI) to enhance text prompts using the Pollinations.ai API, featuring a dynamic user interface based on an external JSON file.
+Un programa con interfaz gráfica de usuario (GUI) segura y robusta para mejorar prompts de texto utilizando la API de Pollinations.ai, con una interfaz de usuario dinámica basada en un archivo JSON externo.
 
-## Features
+## Características
 
-\*   **Dynamic UI:** The interface is dynamically generated from a `prompts.json` file, allowing for easy customization of prompt categories.
-\*   **Secure API Client:** The application uses a secure API client that validates SSL certificates and loads the API token from a `.env` file.
-\*   **Robust Error Handling:** The application has solid error handling to manage network issues, API errors, and other unexpected events.
-\*   **Asynchronous API Calls:** The application uses a thread pool to make asynchronous API calls, ensuring the GUI remains responsive.
-\*   **History and Conversation Management:** The application maintains a history of enhanced prompts and conversations for each category.
-\*   **Export and Copy:** Allows exporting conversations and copying enhanced prompts to the clipboard.
-\*   **Maximized on Startup:** The application window starts maximized for a better user experience.
+*   **UI Dinámica:** La interfaz se genera dinámicamente a partir de un archivo `prompts.json`, permitiendo una fácil personalización de las categorías de prompts.
+*   **Cliente de API Seguro:** La aplicación utiliza un cliente de API seguro que valida los certificados SSL y carga el token de la API desde un archivo `.env`.
+*   **Manejo de Errores Robusto:** La aplicación cuenta con un sólido manejo de errores para gestionar problemas de red, errores de la API y otros eventos inesperados.
+*   **Llamadas Asíncronas a la API:** La aplicación utiliza un grupo de hilos (thread pool) para realizar llamadas asíncronas a la API, asegurando que la GUI permanezca receptiva.
+*   **Gestión de Historial y Conversación:** La aplicación mantiene un historial de los prompts mejorados y las conversaciones para cada categoría.
+*   **Exportar y Copiar:** Permite exportar conversaciones y copiar los prompts mejorados al portapapeles.
+*   **Inicio Maximizado:** La ventana de la aplicación se inicia maximizada para una mejor experiencia de usuario.
 
-## Author
+## Autor
 
-\*   **Created by:** Diego Gonzalez
-\*   **Contact:** diegoalgg88@gmail.com
+*   **Creado por:** Diego Gonzalez
+*   **Contacto:** diegoalgg88@gmail.com
 
-## Installation and Configuration
+## Instalación y Configuración
 
-Follow these steps to set up the application environment.
+Sigue estos pasos para configurar el entorno de la aplicación.
 
-### 1\. Prerequisites
+### 1. Prerrequisitos
 
-\*   Have Python 3 installed.
+*   Tener Python 3 instalado.
 
-### 2\. Configure the API Token
+### 2. Configurar el Token de API
 
-Before running the setup, you must provide your Pollinations.ai API token.
+Antes de ejecutar la configuración, debes proporcionar tu token de API de Pollinations.ai.
 
-1.  In the project's root directory, create a file named `.env`.
-2.  Open the `.env` file and add your token as follows:
+1.  En la raíz del proyecto, crea un archivo llamado `.env`.
+2.  Abre el archivo `.env` y añade tu token de la siguiente manera:
 
-    `    API_TOKEN=your-api-token-here    `
+    ```
+    API_TOKEN=tu-token-de-api-aqui
+    ```
 
-### 3\. Run the Setup Script
+### 3. Ejecutar el Script de Configuración
 
-I have created a script to automate the creation of the virtual environment and the installation of dependencies.
+He creado un script para automatizar la creación del entorno virtual y la instalación de dependencias.
 
-1.  Open a terminal in the project's root directory.
-2.  Execute the following command:
+1.  Abre una terminal en el directorio raíz del proyecto.
+2.  Ejecuta el siguiente comando:
 
-    `    python setup.py    `
+    ```
+    python setup.py
+    ```
 
-    This script will create a `.venv` folder with the virtual environment and install all necessary libraries found in `project/requirements.txt`.
+    Este script creará una carpeta `.venv` con el entorno virtual e instalará todas las librerías necesarias que se encuentran en `project/requirements.txt`.
 
-## Usage
+## Uso
 
-To run the application, simply double-click the `run.bat` file located in the project's root directory.
+Para ejecutar la aplicación, simplemente haz doble clic en el archivo `run.bat` que se encuentra en el directorio raíz del proyecto.
 
-This script will handle:
+Este script se encargará de:
 
-1.  Requesting administrator permissions (necessary for proper execution).
-2.  Activating the correct virtual environment.
-3.  Starting the application.
+1.  Solicitar permisos de administrador (necesarios para una correcta ejecución).
+2.  Activar el entorno virtual correcto.
+3.  Iniciar la aplicación.
 
-## Project Structure
+## Estructura del Proyecto
 
-The project is organized into various directories and modules to keep the code clean and scalable.
+El proyecto está organizado en varios directorios y módulos para mantener el código limpio y escalable.
 
-\-   `setup.py`: Script in the project root that automates the creation of a virtual environment (`.venv`) and the installation of necessary dependencies.
-\-   `run.bat`: Windows executable file in the root that starts the application with administrator privileges and using the correct virtual environment.
-\-   `logs/`: Directory in the root that stores application execution logs.
-\-   `project/`: Contains all the application's source code.
-    -   `main.py`: The main entry point that starts the application.
-    -   `requirements.txt`: A list of the necessary Python libraries.
-    -   `config/`: Module responsible for configuration.
-        -   `config.ini`: Defines API and application settings (URL, timeouts, window dimensions).
-        -   `prompts.json`: The key file that allows dynamically defining the categories and enhancement prompts that appear in the interface.
-    -   `core/`: Contains the main application logic.
-        -   `gui.py`: Defines the entire structure, design, and behavior of the graphical user interface (GUI) with Tkinter.
-        -   `api_client.py`: Manages secure communication with the Pollinations.ai API.
-    -   `utils/`: Module for cross-cutting utilities.
-        -   `logger.py`: Configures the logging system to record events and errors.
-    -   `docs/`: Additional project documentation.
+-   `setup.py`: Script en la raíz del proyecto que automatiza la creación de un entorno virtual (`.venv`) y la instalación de las dependencias necesarias.
+-   `run.bat`: Archivo ejecutable de Windows en la raíz que inicia la aplicación con privilegios de administrador y utilizando el entorno virtual correcto.
+-   `logs/`: Directorio en la raíz que almacena los logs de ejecución de la aplicación.
+-   `project/`: Contiene todo el código fuente de la aplicación.
+    -   `main.py`: Punto de entrada principal que inicia la aplicación.
+    -   `requirements.txt`: Lista de las librerías de Python necesarias.
+    -   `config/`: Módulo encargado de la configuración.
+        -   `config.ini`: Define la configuración de la API y la aplicación (URL, timeouts, dimensiones de la ventana).
+        -   `prompts.json`: Archivo clave que permite definir dinámicamente las categorías y los prompts de mejora que aparecen en la interfaz.
+    -   `core/`: Contiene la lógica principal de la aplicación.
+        -   `gui.py`: Define toda la estructura, diseño y comportamiento de la interfaz gráfica de usuario (GUI) con Tkinter.
+        -   `api_client.py`: Gestiona la comunicación segura con la API de Pollinations.ai.
+    -   `utils/`: Módulo para utilidades transversales.
+        -   `logger.py`: Configura el sistema de logging para registrar eventos y errores.
+    -   `docs/`: Documentación adicional del proyecto.
 
-Below is a graphical representation of the structure:
+A continuación, se muestra una representación gráfica de la estructura:
 
 ```
 Enhance_Prompt/
-├── .env                # (Must be created by the user)
-├── run.bat             # Execution script for Windows
-├── setup.py            # Environment setup script
-├── logs/               # Application logs
-├── depreciated/        # Old code (not used)
+├── .env                # (Debe ser creado por el usuario)
+├── run.bat             # Script de ejecución para Windows
+├── setup.py            # Script de configuración del entorno
+├── logs/               # Logs de la aplicación
+├── depreciated/        # Código antiguo (no utilizado)
 └── project/
-    ├── main.py         # Main application entry point
-    ├── requirements.txt
-    ├── config/
-    │   ├── config.ini
-    │   └── prompts.json
-    ├── core/
-    │   ├── api_client.py
-    │   └── gui.py
-    ├── utils/
-    │   └── logger.py
-    ├── docs/
-    │   ├── CONTRIBUTING.md
-    │   └── LICENSE
-    └── tests/
+    ├── main.py         # Punto de entrada de la aplicación
+    ├── requirements.txt
+    ├── config/
+    │   ├── config.ini
+    │   └── prompts.json
+    ├── core/
+    │   ├── api_client.py
+    │   └── gui.py
+    ├── utils/
+    │   └── logger.py
+    ├── docs/
+    │   ├── CONTRIBUTING.md
+    │   └── LICENSE
+    └── tests/
 ```
 
-## Contributions
+## Contribuciones
 
-Please read [CONTRIBUTING.md](https://www.google.com/search?q=docs/CONTRIBUTING.md) for more details on our code of conduct and the process for submitting pull requests to us.
+Por favor, lee [CONTRIBUTING.md](docs/CONTRIBUTING.md) para más detalles sobre nuestro código de conducta y el proceso para enviarnos pull requests.
 
-## License
+## Licencia
 
-This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=docs/LICENSE) file for details.
+Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](docs/LICENSE) para más detalles.
