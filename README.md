@@ -83,15 +83,11 @@ A continuación, se muestra una representación gráfica de la estructura:
 
 ```
 Enhance_Prompt/
-├── .env                # (Debe ser creado por el usuario)
-├── run.bat             # Script de ejecución para Windows
-├── setup.py            # Script de configuración del entorno
-├── logs/               # Logs de la aplicación
-├── depreciated/        # Código antiguo (no utilizado)
 └── project/
     ├── main.py         # Punto de entrada de la aplicación
     ├── requirements.txt
     ├── config/
+    │   ├── .env  
     │   ├── config.ini
     │   └── prompts.json
     ├── core/
